@@ -1,0 +1,59 @@
+.zd-pagination-list {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, .88);
+  font-size: 14px;
+  line-height: 22px;
+  list-style: none;
+  display: flex;
+}
+
+.zd-pagination-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  line-height: 30px;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  outline: 0;
+  cursor: pointer;
+}
+
+.zd-pagination-item--ellipsis {
+  cursor: default;
+}
+
+.zd-pagination-item:hover {
+  background-color: rgba(0, 0, 0, .06);
+}
+
+.zd-pagination-item--ellipsis:hover,
+.zd-pagination-item--arrow.z-dis:hover {
+  background-color: #fff;
+}
+
+.zd-pagination-item.z-active {
+  font-weight: 600;
+  background-color: #fff;
+  border-color: #1677ff;
+}
+
+.zd-pagination-item--ellipsis img {
+  width: 30px;
+  height: 30px;
+}
+
+.zd-pagination-item--arrow img {
+  width: 20px;
+  height: 20px;
+}
+
+.zd-pagination-item--arrow.z-dis {
+  cursor: not-allowed;
+}
