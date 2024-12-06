@@ -44,14 +44,18 @@ const Pagination = ((document) => {
     }
 
     init(props = {}) {
-      const { total, pageSize = defaultPageSize, defaultCurrent } = props;
+      const { total, pageSize = defaultPageSize, defaultCurrent = pageStartNumber } = props;
 
       this._total = Number(total);
       if (this._total === NaN || this._total < 0) {
         throw new TypeError(`total 参数错误: ${total}`);
       }
 
-      this._pageSize = pageSize;
+      this._pageSize = Number(pageSize);
+      if (this._pageSize === NaN || this._pageSize <= 0) {
+        throw new TypeError(`pageSize 参数错误: ${pageSize}`);
+      }
+
       this._pageMax = Math.ceil(this._total / this._pageSize);
       if (defaultCurrent <= pageStartNumber) {
         this._current = pageStartNumber
